@@ -1,0 +1,32 @@
+.top-bar {
+    background: #6610f2;
+    padding: 10px 0;
+  }
+  
+  .top-bar .social a, .top-bar .search-icon a {
+    color: #fff;
+    opacity: .5;
+    padding: 5px;
+  }
+  
+  .top-bar .social a:hover, .top-bar .search-icon a:hover {
+    opacity: 1;
+  }
+  
+  .top-bar .social {
+    text-align: left;
+  }
+  
+  .top-bar .search-icon {
+    text-align: right;
+  }
+  
+  .navbar .container>div {
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  @media (max-width: 767.98px) {
+    .navbar .container>div {
+      border-bottom: none;
+    }
+  }

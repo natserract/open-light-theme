@@ -23,5 +23,5 @@
       'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'open-light' ),
       'after'  => '</div>',
     ) ); ?>
-  </div><!-- .entry-content -->
-</article><!-- #post-## -->
+  </div>
+</article>

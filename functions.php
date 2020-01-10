@@ -1,7 +1,6 @@
 <?php 
 
     require get_theme_file_path( '/inc/menus.php' );
-    require get_theme_file_path( '/inc/menus.php' );
 
     // -> WP CSS/JS Integration
     function open_light_scripts() {
@@ -35,7 +34,7 @@
         if ( ! is_single() ) {
             $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
                 get_permalink( get_the_ID() ),
-                __( 'Read More', 'textdomain' )
+                __( 'Read More >', 'textdomain' )
             );
         }
      
@@ -43,11 +42,22 @@
     }
     add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+
+    /* Set Excerpt Length */
+    function wpdocs_custom_excerpt_length( $length ) {
+        return 15;
+    }
+    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
     
     /* Search Form */
     function wpdocs_after_setup_theme() {
         add_theme_support( 'html5', array( 'search-form' ) );
     }
     add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );
+
+
+    /* Enable featured img posts */
+    add_theme_support( 'post-thumbnails' );
 
 ?>

@@ -23,10 +23,17 @@
                 <a href="#"><span class="fa fa-youtube-play"></span></a>
               </div>
               <div class="col-3 search-top">
-                <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-                <form action="#" class="search-top-form">
-                  <span class="icon fa fa-search"></span>
-                  <input type="text" id="s" placeholder="Type keyword to search...">
+
+                <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+                    <label>
+                      <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+                      <input type="search" class="search-field"
+                          placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+                          value="<?php echo get_search_query() ?>" name="s"
+                          title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+                    </label>
+                  <input type="submit" class="search-submit"
+                    value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
                 </form>
               </div>
             </div>
@@ -37,7 +44,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="index.html">Wordify</a></h1>
+              <h1 class="site-logo"><a href="index.html">Open Light</a></h1>
             </div>
           </div>
         </div>
@@ -50,4 +57,3 @@
           </div>
         </nav>
       </header>
-      <!-- END header -->

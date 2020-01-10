@@ -1,11 +1,27 @@
 <?php
     get_header();
-    get_template_part( 'template-parts/content', get_post_type() );
 ?>
 
 <div id="primary" class="content-area">
 		<main id="main" class="site-main">
-            <h2>Main</h2>
+        <div class="container">
+        <br/>
+        <h2> Latest posts </h2>
+        <br/>
+        <?php 
+            if ( have_posts() ) : 
+                while ( have_posts() ) : the_post(); 
+                    the_title( '<h3>', '</h3>' );
+                    the_excerpt();
+                endwhile;
+                the_posts_pagination( array(
+                    'mid_size'  => 2,
+                    'prev_text' => __( 'Back', 'textdomain' ),
+                    'next_text' => __( 'Onward', 'textdomain' ),
+                ) );
+            endif; 
+            ?>
+        </div>
 </main>
 </div>
 

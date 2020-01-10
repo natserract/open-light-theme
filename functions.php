@@ -1,6 +1,7 @@
 <?php 
 
     require get_theme_file_path( '/inc/menus.php' );
+    require get_theme_file_path( '/inc/menus.php' );
 
     // -> WP CSS/JS Integration
     function open_light_scripts() {
@@ -28,5 +29,18 @@
         ));
     }
     add_action( 'widgets_init', 'open_light_widgets_init' );
+
+    // -> Setting post content excerpt
+    function wpdocs_excerpt_more( $more ) {
+        if ( ! is_single() ) {
+            $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+                get_permalink( get_the_ID() ),
+                __( 'Read More', 'textdomain' )
+            );
+        }
+     
+        return $more;
+    }
+    add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 ?>

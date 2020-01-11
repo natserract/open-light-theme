@@ -17,4 +17,22 @@
     <nav class="menu-button-container">
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
+
+    <div class="search-button">
+        <span class="fa fa-search"></span>
+
+        <div class="search-form-container">
+          <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+              <label>
+                  <input type="search" class="search-field"
+                      required
+                      placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>"
+                      value="<?php echo get_search_query() ?>" name="s"
+                      title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+              </label>
+              <input type="submit" class="search-submit"
+              value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
+          </form>
+        </div>
+    </div>
 </header>

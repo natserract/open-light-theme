@@ -10,6 +10,7 @@
 
         wp_enqueue_script( 'jquery-scripts', get_template_directory_uri() . '/assets/vendor/js/jquery.min.js',false,'1.0', 'all');
         wp_enqueue_script( 'bootstrap-scripts', get_template_directory_uri() . '/assets/vendor/js/bootstrap.min.js',false,'1.0', 'all');
+        wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/functions.js',false,'1.0', 'all');
     } 
     
     add_action( 'wp_enqueue_scripts', 'open_light_scripts' );
@@ -59,5 +60,17 @@
 
     /* Enable featured img posts */
     add_theme_support( 'post-thumbnails' );
+
+
+    /* Limit Posts */
+    function wpcodex_filter_main_search_post_limits( $limit, $query ) {
+
+        if ( ! is_admin() && $query->is_main_query() && ($query->is_search() || $query->is_home()) ){
+            return 'LIMIT 0, 19';
+        }
+    
+        return $limit;
+    }
+    add_filter( 'post_limits', 'wpcodex_filter_main_search_post_limits', 10, 2 );
 
 ?>

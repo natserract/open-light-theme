@@ -44,6 +44,7 @@
   text-align: left;
   display: none;
 }
+
 .search-form-container.show {
   display: block;
 }
@@ -209,6 +210,23 @@
 
 @media (max-width: 980px) {
   .home-header-panel .home-main-title h1 {
-      letter-spacing: 10px;
-  } 
+    letter-spacing: 10px;
+  }
+}
+
+/* Footer */
+
+.global-footer {
+  max-width: 95%;
+  margin: 0px auto 40px auto;
+  text-align: center;
+}
+
+.footer-item-text {
+  text-transform: capitalize;
+}
+
+.footer-item-text a {
+  font-size: 1.2em;
+  color: #000;
 }

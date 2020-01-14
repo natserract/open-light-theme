@@ -153,6 +153,10 @@ template {
     display: none;
 }
 
+figure {
+    text-align: center !important;
+    margin: 2em 0;
+}
 [hidden] {
     display: none;
 }

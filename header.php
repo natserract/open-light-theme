@@ -1,7 +1,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <head>
-    <title>Open Light – WordPress theme </title>
+    <title><?php wp_title(); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700|Inconsolata:400,700" rel="stylesheet">

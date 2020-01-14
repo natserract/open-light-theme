@@ -31,7 +31,7 @@
     add_action( 'widgets_init', 'open_light_widgets_init' );
 
     // -> Setting post content excerpt
-    function wpdocs_excerpt_more( $more ) {
+    function open_light_excerpt_more( $more ) {
         if ( ! is_single() ) {
             $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
                 get_permalink( get_the_ID() ),
@@ -41,21 +41,36 @@
      
         return $more;
     }
-    add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+    add_filter( 'excerpt_more', 'open_light_excerpt_more' );
 
 
     /* Set Excerpt Length */
-    function wpdocs_custom_excerpt_length( $length ) {
+    function open_light_custom_excerpt_length( $length ) {
         return 15;
     }
-    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+    add_filter( 'excerpt_length', 'open_light_custom_excerpt_length', 999 );
 
     
+    /* Limit Title Length */
+    function open_light_post_title_length($title) {
+        $max = 18;
+        if (is_home()) {
+            if(strlen($title) > $max) {
+                return substr( $title, 0, $max ). " &hellip;";
+            } else {
+                return $title;
+            }
+        }
+        return $title;
+    }
+    add_filter('the_title', 'open_light_post_title_length');
+
+
     /* Search Form */
-    function wpdocs_after_setup_theme() {
+    function open_light_after_setup_theme() {
         add_theme_support( 'html5', array( 'search-form' ) );
     }
-    add_action( 'after_setup_theme', 'wpdocs_after_setup_theme' );
+    add_action( 'after_setup_theme', 'open_light_after_setup_theme' );
 
 
     /* Enable featured img posts */
@@ -72,5 +87,15 @@
         return $limit;
     }
     add_filter( 'post_limits', 'wpcodex_filter_main_search_post_limits', 10, 2 );
+
+
+    /* Custom Site Title */
+    function open_light_wp_title($title) {
+        if(! is_home()) {
+            return get_the_title();
+        }
+        return 'Open Light – WordPress theme';
+    }
+    add_filter('wp_title', 'open_light_wp_title');
 
 ?>

@@ -4,6 +4,10 @@
 
 Open Light is a clean, minimalist, and empty base theme for developers. It supports and includes an example for navigation, a widget sidebar, and a custom post type - all without plugins!
 
+## Overview
+
+![](https://github.com/alfinsuryaS/open-light-wp-theme/blob/master/screenshot.png "Screenshot")
+
 ## Installation
 
 1. Upload the contents of this repository to a new directory in `wp-content/themes`.

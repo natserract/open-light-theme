@@ -46,6 +46,9 @@
 
     /* Set Excerpt Length */
     function open_light_custom_excerpt_length( $length ) {
+        if (is_search()) {
+            return 35;
+        }
         return 15;
     }
     add_filter( 'excerpt_length', 'open_light_custom_excerpt_length', 999 );

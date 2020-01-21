@@ -1,8 +1,6 @@
 # Open Light Theme
 
-### Base theme for WordPress development
-
-Open Light is a clean, minimalist, and empty base theme for developers. It supports and includes an example for navigation, a widget sidebar, and a custom post type - all without plugins!
+Open Light is a clean, simple and minimalist theme. It supports and includes an example for navigation, a widget sidebar, and a custom post type - all without plugins!
 
 ## Overview
 
